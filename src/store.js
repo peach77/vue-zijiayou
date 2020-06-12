@@ -9,14 +9,14 @@ const store = new Vuex.Store({
         inland:[{
             id:'12wsd',
             travel:"小资圣地泸沽湖5日自驾",
-            img:'',
+            imgSrc: require("../src/assets/01.jpg"),
             path:"线路：重庆-雅安-西昌-盐源-泸沽湖",
             date:"2015-12-30出发",
             price:"5280"
         },{
             id:'56fdg',
             travel:"食在广东粤菜美食6日自驾",
-            img:'',
+            imgSrc: require("../src/assets/02.jpg"),
             path:"线路：广州-开平-番禺-深圳 ",
             date:"2015-12-29出发",
             price:"3680"

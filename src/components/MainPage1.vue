@@ -24,7 +24,9 @@
           <div class="line"></div>
           <span>境内</span>
         </div>
-        <div class="top" v-for="item in $store.state.inland" :key='item.id'>{{item.travel}}</div>
+        <div class="top" v-for="item in $store.state.inland" :key='item.id'>{{item.travel}}
+          <img :src="item.imgSrc" >
+        </div>
       </div>
   </div>
 
@@ -63,6 +65,7 @@
 </script>
  <style scoped >
     div.wrap{
+     
         width: 6.4rem;
         overflow: hidden;
     }
