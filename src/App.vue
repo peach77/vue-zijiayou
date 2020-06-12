@@ -1,6 +1,12 @@
 <template>
   <div id="app">
-    <MainPage1/>
+       <router-view>
+
+        <MainPage1/>
+       </router-view>
+  
+  
+   
   </div>
 </template>
 

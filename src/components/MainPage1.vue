@@ -1,6 +1,8 @@
 <template>
   <div class="wrap">
-      <header>
+ 
+  <el-scrollbar>
+         <header>
            <div class="father"><div class="box"><i class="iconfont icon-didian"></i></div><span>呼和浩特</span></div>
            <div class="tab"><span  v-on:click="change('zijia')" :class="{active:$store.state.isActive}">爱自驾</span><span class="chat" v-on:click="change('hudong')" :class="{active:$store.state.isActiveOne}">互动</span></div>
             <div class="box"><i class="iconfont icon-camera_icon"></i></div>
@@ -10,7 +12,6 @@
             <swiper-slide><img src="../assets/t01ddc56b53349449f8.jpg" alt=""></swiper-slide>
             <swiper-slide><img src="../assets/t01fc73c8f3ddfb26ff.jpg" alt=""></swiper-slide>
             <swiper-slide><img src="../assets/t017f3b8ebdcd629bf8.jpg" alt=""></swiper-slide>
-         
              <div class="swiper-pagination" slot="pagination"></div>
              </swiper>
       </div>
@@ -24,17 +25,54 @@
           <div class="line"></div>
           <span>境内</span>
         </div>
-        <div class="top" v-for="item in $store.state.inland" :key='item.id'>{{item.travel}}
-          <img :src="item.imgSrc" >
+        <div class="wrap-top" v-for="item in $store.state.inland" :key='item.id'>
+            <div class="top">
+               <span class="title">{{item.travel}}</span>
+              <img :src="item.imgSrc" >
+              <span class="date">{{item.date}}</span>
+            </div>
+            <div class="bottom">
+                <p>{{item.path}}</p>
+            </div>
         </div>
+        <div class="more">
+            <p> <span class="add">+</span><span>MORE</span></p>
+        </div>
+        
       </div>
+      <div>
+          <div class="inside">
+              <div class="line"></div>
+              <span>境外</span>
+        </div>
+          <div class="wrap-top" v-for="item in $store.state.overSea" :key='item.id'>
+            <div class="top">
+               <span class="title">{{item.travel}}</span>
+              <img :src="item.imgSrc" >
+              <span class="date">{{item.date}}</span>
+            </div>
+            <div class="bottom">
+                <p>{{item.path}}</p>
+            </div>
+        </div>
+        <div class="more">
+            <p> <span class="add">+</span><span>MORE</span></p>
+        </div>
+      
+      </div>
+    
+ 
+       </el-scrollbar>
+      <FooterBottom />
   </div>
 
 </template>
 <script>
+import FooterBottom from './FooterBottom.vue'
  export default {
     name:'mainpage',
-   data() {
+    components:{FooterBottom},
+     data() {
       return {
         swiperOptions: {
           pagination: {
@@ -59,15 +97,17 @@
         }
     },
     created () {
-      console.log(this.$store.state.inland);   
+      console.log(this.$router);   
     },
 }
 </script>
  <style scoped >
     div.wrap{
      
-        width: 6.4rem;
-        overflow: hidden;
+        width:100%;
+        height: 100vh;
+      overflow: scroll;
+    
     }
     .icon-didian,.icon-camera_icon{
         color: white;
@@ -136,6 +176,68 @@
       right: 0.08rem;
       font-size: 16px;
       color:#50bbdb ;
+    }
+    div.inside{
+      margin-bottom: 0.25rem;
+    }
+     div.top{
+       position: relative;
+
+     }
+      div.top span.date{
+         display: block;
+       position: absolute;
+       bottom: 0;
+       left: 0;
+        width: 100%;
+        background-color: rgba(255,255,255,0.2);
+        line-height: 0.2rem;
+        color: white;
+       padding-left: 0.1rem;
+       font-size: 14px;
+       
+      }
+     div.top  span.title{
+       display: block;
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 0.3rem;
+       background-color: rgba(255,255,255,0.2);
+       line-height: 0.3rem;
+       color: white;
+       padding-left: 0.1rem;
+       font-size: 16px;
+       
+     }
+    div.top  img{
+     width: 100%;
+     height: 2rem;
+    }
+    div.bottom{
+        font-size: 16px;
+      line-height: 0.4rem;
+      padding-left: 0.1rem;
+    }
+    div.more{
+      background-color: #f1f1f1;
+      line-height: 0.4rem;
+      text-align: center;
+      color: #eb6417;
+      margin-bottom: 0.15rem;
+    }
+    div.more p{
+      font-size: 14px;
+    }
+    div.more span.add{
+    
+      line-height: 10px;
+      margin-right: 10px;
+      display: inline-block;
+      border: 1px solid #eb6417;
+      border-radius: 50%;
+      padding: 0.02rem;
     }
 </style> 
 <style >
