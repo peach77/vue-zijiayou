@@ -19,16 +19,17 @@
           <input type="text"><i class="iconfont icon-sousuo"></i>
         </span>
       </div>
-      <div class="inside">
-        <div class="line"></div>
-        <span>境内</span>
+      <div>
+        <div class="inside">
+          <div class="line"></div>
+          <span>境内</span>
+        </div>
+        <div class="top" v-for="item in $store.state.inland" :key='item.id'>{{item.travel}}</div>
       </div>
   </div>
 
 </template>
-
 <script>
-
  export default {
     name:'mainpage',
    data() {
@@ -54,7 +55,10 @@
         change(n){
            this.$store.commit('changeMainPage',n);
         }
-    }
+    },
+    created () {
+      console.log(this.$store.state.inland);   
+    },
 }
 </script>
  <style scoped >
