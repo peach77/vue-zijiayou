@@ -17,7 +17,7 @@
       </div>
       <div class="search">
         <span>
-          <input type="text"><i class="iconfont icon-sousuo"></i>
+          <input type="text" v-model="$store.state.inputSearch"><i class="iconfont icon-sousuo"  v-on:click="goto" ></i> 
         </span>
       </div>
       <div>
@@ -25,16 +25,19 @@
           <div class="line"></div>
           <span>境内</span>
         </div>
-        <div class="wrap-top" v-for="item in $store.state.inland" :key='item.id'>
+        <router-link to="/Detials">
+              <div class="wrap-top" v-for="item in $store.state.inland" :key='item.id'>
             <div class="top">
                <span class="title">{{item.travel}}</span>
               <img :src="item.imgSrc" >
               <span class="date">{{item.date}}</span>
             </div>
             <div class="bottom">
-                <p>{{item.path}}</p>
+                <p :style="{color:'black'}">{{item.path}}</p>
             </div>
         </div>
+        </router-link>
+      
         <div class="more">
             <p> <span class="add">+</span><span>MORE</span></p>
         </div>
@@ -45,16 +48,19 @@
               <div class="line"></div>
               <span>境外</span>
         </div>
-          <div class="wrap-top" v-for="item in $store.state.overSea" :key='item.id'>
+          <router-link to="/Detials">
+               <div class="wrap-top" v-for="item in $store.state.overSea" :key='item.id'>
             <div class="top">
                <span class="title">{{item.travel}}</span>
               <img :src="item.imgSrc" >
               <span class="date">{{item.date}}</span>
             </div>
             <div class="bottom">
-                <p>{{item.path}}</p>
+                <p :style="{color:'black'}">{{item.path}}</p>
             </div>
         </div>
+          </router-link>
+         
         <div class="more">
             <p> <span class="add">+</span><span>MORE</span></p>
         </div>
@@ -94,11 +100,20 @@ import FooterBottom from './FooterBottom.vue'
     methods:{
         change(n){
            this.$store.commit('changeMainPage',n);
+        },
+        goto(){
+          console.log(this.$store.state.inputSearch);
+          if(this.$store.state.inputSearch.trim()==='南京'){
+            this.$router.push('/Nanjing') 
+              this.$store.state.inputSearch=''
+          }else{
+           alert('请输入南京')
+           this.$store.state.inputSearch=''
+          }
+          
         }
     },
-    created () {
-      console.log(this.$router);   
-    },
+  
 }
 </script>
  <style scoped >

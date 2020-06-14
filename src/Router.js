@@ -4,6 +4,8 @@ import Router from 'vue-router'
 
 import Map from './components/Map'
 import MainPage1 from './components/MainPage1'
+import NanJing from './components/NanJing'
+import Detials from './components/Detials'
 Vue.use(Router)
 
 export default new Router({
@@ -13,9 +15,19 @@ export default new Router({
         component: MainPage1
       },
       {
+        path: '/Nanjing',
+        name: 'nanjing',
+        component:NanJing
+      },
+      {
         path: '/Map',
         name: 'map',
         component:Map
+      },
+      {
+        path: '/Detials',
+        name: 'detials',
+        component:Detials
       }
     ]
   })
