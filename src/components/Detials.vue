@@ -1,6 +1,5 @@
 <template>
   <div class="wrap">
-         <el-scrollbar>
             <header>
                     <!-- <router-link :to="'./'"><div class="box"><i class="iconfont icon-ico_leftarrow"></i></div></router-link> -->
                     <div class="box" v-on:click='goBack'><i class="iconfont icon-ico_leftarrow"></i></div>
@@ -29,12 +28,12 @@
                  <div class="introduce">
                     <div class="top">
                         <p>
-                        <span  v-on:click="change('tese')" :class="$store.state.blueColor==='tese'?'active':''">行程特色</span>
-                        <span  v-on:click="change('jianjie')" :class="$store.state.blueColor==='jianjie'?'active':''">行程简介</span>
-                        <span  v-on:click="change('xuzhi')" :class="$store.state.blueColor==='xuzhi'?'active':''">预定须知</span></p>
+                        <span v-scroll-to="'#a'"   v-on:click="change('tese')" :class="$store.state.blueColor==='tese'?'active':''" >行程特色</span>
+                        <span  v-scroll-to="'#b'"  v-on:click="change('jianjie')" :class="$store.state.blueColor==='jianjie'?'active':''">行程简介</span>
+                        <span  v-scroll-to="'#c'" v-on:click="change('xuzhi')" :class="$store.state.blueColor==='xuzhi'?'active':''" >预定须知</span></p>
                     </div>
-                    <div class="part-one">
-                        <div class="tese">
+                    <div class="part-one"  >
+                        <div class="tese"  id="a" >
                              <hr>
                             <p>行程特色</p>
                         </div>
@@ -50,8 +49,8 @@
                         <div class="grey" >
                         </div>                     
                     </div>
-                    <div class="part-two">
-                        <div class="tese">
+                    <div class="part-two"    >
+                        <div class="tese" id="b">
                              <hr>
                             <p>行程简介</p>
                         </div>
@@ -89,8 +88,8 @@
                             <img  class="down" src="../assets/26.jpg" alt="">
                         </div>
                     </div>
-                    <div class="part-three">
-                         <div class="tese">
+                    <div class="part-three"     >
+                         <div class="tese" id="c" >
                              <hr>
                             <p>预定须知</p>
                         </div>
@@ -242,17 +241,52 @@
                             </div>
                           
                         </div>
+                        <div class="reply">
+                            <p :style="{color:'#ec886a'}">爱自驾客服的回复:</p>
+
+                            <p>尊敬的爱自驾会员，给您立减400这个订单之后，此特惠房型实际您成功预定的此
+                            客栈只收了您75元/晚，您可以仔细的对比下的，感谢您对爱自驾网的关注与支持，
+                            欢迎下次预订4007-999-999，谢谢！祝您愉快！</p>
+                        </div>
                     </div>
+                   
+                  
                  </div>
             </div>
            
-
-         </el-scrollbar>
+            <footer>
+                <p >           
+                    <span> <i class="iconfont icon-xin"  ></i></span><br>
+                    <span >收藏</span>          
+                </p>
+                <p class="middle">
+                 <span> <i class="iconfont icon-icon_dianhua" ></i></span><br/><span >电话咨询</span>
+                   </p>
+               <p class="apply"> <router-link to='/Apply'>我要报名</router-link></p>
+                
+            </footer>
+    
  
   </div>
 </template>
 
 <script>
+
+import Vue from "vue";
+import VueScrollTo from "vue-scrollto";
+Vue.use(VueScrollTo, options);
+let options = { 
+container: "body", 
+  duration: 500,
+    easing: "ease",
+     offset: 0, 
+       force: true, 
+         cancelable: true,  
+         onStart: false, 
+          onDone: false,  
+          onCancel: false,
+            x: false,
+              y: true};
 export default {
      name:'detials',
     methods:{
@@ -261,7 +295,30 @@ export default {
         },
         goBack(){
              this.$router.back()
-        }
+        },
+        // goTese(n){
+        // var anchor = this.$el.querySelector(".top")
+        // anchor.scrollTop = 0
+        // console.log(this.$el.querySelector(n).offsetTop);
+        //  this.$el.querySelector(".top").scrollIntoView(n)
+        // },
+        // goJianjie(n){
+        // var anchor = this.$el.querySelector(".top")
+        // anchor.scrollTop = 0
+        // console.log(this.$el.querySelector(n).offsetTop);
+        // this.$el.querySelector(".top").scrollIntoView(n)
+        // },
+        // goXuzhi(val){
+        //    var anchor= this.$el.querySelector(val);
+        //    console.log(anchor);
+        //    console.log(this.$el.querySelector(".top"));
+           
+        //    console.log( anchor.offsetTop);
+         
+           
+        
+        // },
+       
     }
 }
 </script>
@@ -357,6 +414,7 @@ export default {
           padding: 4px;
         
       }
+    
       div.top{
           width: 100%;
           background-color: white;
@@ -451,6 +509,7 @@ export default {
              background-color: white;            
              padding: 14px 20px 0 20px;
              
+             
          }
          div.text{
              padding: 0.2rem;
@@ -481,11 +540,15 @@ export default {
              align-items: center;
             padding-bottom: 10px;
          }
+         .comments{
+               background-color: white;
+         }
         .comments div.comment-list{
            
             padding: 0.2rem;
             background-color: white;
             border-bottom: 1px solid #d2d2d2;
+            margin-bottom: 0.2rem;
         }
         div.comment-list p{
              display: flex;
@@ -500,7 +563,7 @@ export default {
             vertical-align: middle;
         }
         div.comment-box{
-            padding: 0.2rem;
+            padding:0 0.2rem 0.2rem 0.2rem;
             background-color: white;
            
         }
@@ -526,6 +589,44 @@ export default {
          div.comment-img{
              margin-top:10px;
          }
+         div.reply{
+             background-color: #f4f4f4;
+             padding: 0.2rem;
+             margin-bottom: 0.2rem;  
+         }
+         footer{
+                white-space: pre-line;
+             border-top: 1px solid #f4f4f4;
+             display: flex;
+             justify-content: space-between;
+               box-sizing: border-box;
+         }
+          footer p{
+             width: 25%;
+            color: black;
+          }
+          footer .apply a{
+               color: white;
+          } 
+         footer .apply{
+             background-color: #50bbdb;
+             color: white;
+             text-align: center;
+             line-height: 0.6rem;
+             width: 50%;
+         }
+         footer .middle{
+             border-left:   1px solid #cccccc;
+            border-right:   1px solid #cccccc; 
+         }
+         footer p {
+          
+             display: flex;
+             align-items: center;
+            justify-content: center; 
+        
+         }
+      
 
       
 </style>

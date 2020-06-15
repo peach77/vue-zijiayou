@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
  
-  <el-scrollbar>
+ 
          <header>
            <div class="father"><div class="box"><i class="iconfont icon-didian"></i></div><span>呼和浩特</span></div>
            <div class="tab"><span  v-on:click="change('zijia')" :class="{active:$store.state.isActive}">爱自驾</span><span class="chat" v-on:click="change('hudong')" :class="{active:$store.state.isActiveOne}">互动</span></div>
@@ -68,7 +68,7 @@
       </div>
     
  
-       </el-scrollbar>
+     
       <FooterBottom />
   </div>
 

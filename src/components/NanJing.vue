@@ -1,6 +1,6 @@
 <template>
   <div class="wrap">
-         <el-scrollbar>
+        
                    <header>
                     <router-link :to="'./'"><div class="box"><i class="iconfont icon-ico_leftarrow"></i></div></router-link>
                     <div class="middle">
@@ -24,7 +24,7 @@
                        
                     </body>
 
-         </el-scrollbar>
+      
             <div class="footer">
                  <p v-on:click="where('city')" :class="$store.state.nanjingActive==='city'?'active':''"><span><i class="iconfont icon-thin-_home_house"></i></span><br/><span>出发城市</span></p>
                 <p v-on:click="where('data')" :class="$store.state.nanjingActive==='data'?'active':''"><span><i class="iconfont icon-rili"></i></span><br/><span>行程天数</span></p>

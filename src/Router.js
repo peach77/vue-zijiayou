@@ -7,6 +7,7 @@ import MainPage1 from './components/MainPage1'
 import NanJing from './components/NanJing'
 import Detials from './components/Detials'
 import Leader from './components/Leader'
+import Apply from './components/Apply'
 Vue.use(Router)
 
 export default new Router({
@@ -34,6 +35,11 @@ export default new Router({
         path: '/Leader',
         name: 'leader',
         component:Leader
+      },
+      {
+        path: '/Apply',
+        name: 'apply',
+        component:Apply
       }
     ]
   })

@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "689319",
+      "name": "心",
+      "font_class": "xin",
+      "unicode": "e82a",
+      "unicode_decimal": 59434
+    },
+    {
+      "icon_id": "12683558",
+      "name": "电话",
+      "font_class": "icon_dianhua",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
       "icon_id": "8289033",
       "name": "星星",
       "font_class": "xingxing",

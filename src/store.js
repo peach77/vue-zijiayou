@@ -138,6 +138,7 @@ const store = new Vuex.Store({
       skipColor(state,n){
         state.blueColor=n
       }
+      
     }
   })
   export default store
