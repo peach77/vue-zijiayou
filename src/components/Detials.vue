@@ -175,7 +175,73 @@
                             <p>领队介绍</p>
                     </div>
                     <div class="leader">
-                         <p>中国自驾游联盟南京站</p><span> <i class="iconfont icon-youjiantou"></i></span>
+                        <router-link to="Leader">
+                         <div class="leader-box">
+                             <p>中国自驾游联盟南京站</p><span> <i class="iconfont icon-youjiantou"></i></span>
+                         </div>
+                        
+                         <div class="dog-logo">
+                             <img src="../assets/logo1.png" alt=""><p>自2005年开始，南京首家专业自驾旅游公司--“中国自驾游联盟”，本着以城市
+                                为中心，......
+                                </p>
+                         </div>
+                         </router-link>
+                    </div>
+                     <div class="tese">
+                             <hr>
+                            <p>用户评论</p>
+                    </div>
+                    <div class="comments">
+                        <div class="comment-list">
+                            <p>
+                            <span>综合评价: <i class="iconfont icon-xingxing"></i><i class="iconfont icon-xingxing"></i><i class="iconfont icon-xingxing"></i><i class="iconfont icon-xingxing"></i><i class="iconfont icon-xingxing"></i></span>
+                            <span>15人出游</span>
+                            <span>2条评论</span>
+                            </p>
+                        </div>
+                        <div class="comment-box">
+                            <p class="first">
+                                <span class="topic"><img src="../assets/topic.png" alt="">E223685</span>
+                                <span>综合评价: <i class="iconfont icon-xingxing"></i><i class="iconfont icon-xingxing"></i><i class="iconfont icon-xingxing"></i><i class="iconfont icon-xingxing"></i><i class="iconfont icon-xingxing"></i></span>
+                                <span>2015-12-21</span>
+                            </p>
+
+                            <div class="ph">
+                               <p> 18号就结束行程了，现在才来评价，总的来说还是不错的</p>
+                                <p>行程安排：满意</p>
+                                <p>住宿餐食：满意</p>
+                                <p>旅行交通：满意</p>
+                            </div>
+                            <div class="comment-img">
+                                  <img :style="{marginRight:5+'px',width:0.6+'rem'}" src="../assets/comment.png" alt=""  >
+                             <img  :style="{marginRight:5+'px',width:0.6+'rem'}" src="../assets/comment.png" alt="">
+                            </div>
+                          
+                        </div>
+                         <div class="comment-box">
+                            <p class="first">
+                                <span class="topic"><img src="../assets/topic.png" alt="">E223685</span>
+                                <span>综合评价: <i class="iconfont icon-xingxing"></i><i class="iconfont icon-xingxing"></i><i class="iconfont icon-xingxing"></i><i class="iconfont icon-xingxing"></i></span>
+                                <span>2015-12-21</span>
+                            </p>
+
+                            <div class="ph">
+                               <p> 总体评论给90分！双十一活动的时候定的，价格很便宜，还担心会不会住宿太偏僻。
+                                结果还好，第一天在水原这个地方，房间是公寓。周围很多小商店和酒吧，可以不用
+                                非要在第一天行程的汗蒸那里吃饭，这点给大家点建议，后三晚在加阳的怀旧酒店。</p>
+                                <p>
+                                行程安排：行程安排总体满意，第二天的购物关键的重点在于华克山庄，只有60分
+                                钟，那里虽然小，折扣真的便宜。</p>
+                                <p>
+                                住宿餐食：交通基本我们是早晨地铁出，晚上打车回。首尔打车还可以吧，不太赌。</p>
+                               
+                            </div>
+                            <div class="comment-img">
+                                  <img :style="{marginRight:5+'px',width:0.6+'rem'}" src="../assets/comment.png" alt=""  >
+                             <img  :style="{marginRight:5+'px',width:0.6+'rem'}" src="../assets/comment.png" alt="">
+                            </div>
+                          
+                        </div>
                     </div>
                  </div>
             </div>
@@ -392,6 +458,73 @@ export default {
          }
          div.leader{
              background-color: white;
+             padding: 0 0.2rem;
+         }
+          div.leader p{
+              color: black;
+          }
+         div.leader .leader-box{
+             border-bottom: 1px solid #d4d4d4;
+             padding-bottom: 0.02rem ;
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+         }
+         div.dog-logo img{
+             width: 1rem;
+             margin-right: 4px;
+         }
+         div.dog-logo{
+             margin-top: 10px;
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+            padding-bottom: 10px;
+         }
+        .comments div.comment-list{
+           
+            padding: 0.2rem;
+            background-color: white;
+            border-bottom: 1px solid #d2d2d2;
+        }
+        div.comment-list p{
+             display: flex;
+            justify-content: space-around;
+           align-items: center;
+        }
+        .icon-xingxing{
+            color: #ffde2c;
+            font-size: 14px;
+        }
+        div.comment-list p span:first{
+            vertical-align: middle;
+        }
+        div.comment-box{
+            padding: 0.2rem;
+            background-color: white;
+           
+        }
+        div.comment-box p.first{
+               display: flex;
+            justify-content: space-around;
+            align-items: center;
+             border-bottom: 1px dotted #d2d2d2;
+             padding-bottom: 8px;
+             margin-bottom: 8px;
+        }
+        p.first img{
+            width: 0.4rem;
+            margin-right: 4px;
+        }
+        span.topic{
+            display: flex;
+             align-items: center;
+        }
+        div.ph p{
+            line-height: 20px;
+        }
+         div.comment-img{
+             margin-top:10px;
          }
 
       
