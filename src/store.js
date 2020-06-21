@@ -13,6 +13,7 @@ const store = new Vuex.Store({
         blueColor:'tese',
         adultNum:0,
         childNum:0,
+        roomNum:0,
     
         // arr:[{date:'2020/6/18',className:"mark1"},{date:'2020/6/18',className:"mark1"}],
         nanjing:[
@@ -142,6 +143,17 @@ const store = new Vuex.Store({
                 }else{
                     state.childNum--
                 } 
+            }
+        },
+        roomNum(state,n){
+            if(n==='jia'){
+                state.roomNum++
+            }else{
+                if(state.roomNum!=0){
+                    state.roomNum--
+               
+                }
+                    
             }
         },
          changeMainPage(state,n) {

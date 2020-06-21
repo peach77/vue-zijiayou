@@ -14,11 +14,12 @@
                         <p class="top"><span><b>线路信息</b></span></p>
                         <p class="bot">
                             <span>自驾团名称：云南落地自驾行摄之旅</span><br>
-                            <span>出有日期：2016-01-27 </span><br>
-                            <span>出游人数：3成人，0儿童</span><br>
-                            <span>房间： <span>-</span>
-                            <span>1</span>
-                            <span>+</span>（2人间）</span><br>
+                            <span>出游日期：2016-01-27 </span><br>
+                            <span>出游人数：{{$store.state.adultNum}}成人，{{$store.state.childNum}}儿童</span><br>
+                            <span>房间： 
+                            <span class="frame" :style="{color:'#50bbdb'}" @click="subNum('adult')">-</span>
+                            <span class="frame">{{$store.state.roomNum}}</span>
+                            <span class="frame" :style="{color:'#50bbdb'}" @click="addNum('jia')">+</span>（2人间）</span><br>
                             <span>是否同意拼房:</span>
                         </p>
                     </div>
@@ -35,14 +36,19 @@ export default {
     methods: {
       goBack(){
              this.$router.back()
-        }
+        },
+        addNum(n){   
+       this.$store.commit('roomNum',n);   
+    },
+    subNum(n){
+         this.$store.commit('roomNum',n);  
+    },
     },
 }
 </script>
 
 <style scoped>
  div.wrap{
-     
         width:100%;
         height: 100vh;
       overflow: scroll;
@@ -66,10 +72,10 @@ export default {
        font-size: 20px;
    }
      header{
-      
+      background-color: #50bbdb;
         display: flex;
         flex-wrap: nowrap;
-        background-color: #50bbdb;
+        background-color: '#50bbdb';
         padding:  0.21rem ;
         justify-content: space-between;
         align-items: center;
@@ -99,4 +105,11 @@ export default {
          padding:  0 12px ;
          line-height:24px;
      }
+      div.bgc .bot .frame{
+          display: inline-block;
+          border: 1px solid #ededed;
+          line-height: 0;
+          padding: 8px;
+          
+      }
 </style>>
