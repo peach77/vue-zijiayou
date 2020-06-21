@@ -10,6 +10,8 @@
 </template>
 
 <script>
+
+
 import MainPage1 from './components/MainPage1.vue'
 export default {
   name: 'App',

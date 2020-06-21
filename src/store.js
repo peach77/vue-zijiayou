@@ -11,6 +11,10 @@ const store = new Vuex.Store({
         nanjingActive:'city',
         inputSearch:'',
         blueColor:'tese',
+        adultNum:0,
+        childNum:0,
+    
+        // arr:[{date:'2020/6/18',className:"mark1"},{date:'2020/6/18',className:"mark1"}],
         nanjing:[
             {
             id:'nm890',
@@ -116,6 +120,30 @@ const store = new Vuex.Store({
             ]
     },
     mutations: {
+        addNum(state,a){
+            if(a==='adult'){
+                state.adultNum++
+            }else{
+                state.childNum++
+            }
+           
+        },
+        subNum(state,a){
+            if(a==='adult'){
+                if(state.adultNum===0){
+                    state.adultNum=0
+                }else{
+                    state.adultNum--
+                }
+            }
+            else{
+                if(state.childNum===0){
+                    state.childNum=0
+                }else{
+                    state.childNum--
+                } 
+            }
+        },
          changeMainPage(state,n) {
             if(n==='hudong'){
                 state.isActive=false,

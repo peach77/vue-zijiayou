@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="wrap" >
      <header>
         <div class="box" v-on:click='goBack'>
         <i class="iconfont icon-ico_leftarrow"></i></div>

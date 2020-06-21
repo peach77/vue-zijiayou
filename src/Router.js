@@ -8,6 +8,7 @@ import NanJing from './components/NanJing'
 import Detials from './components/Detials'
 import Leader from './components/Leader'
 import Apply from './components/Apply'
+import FillOrder from './components/FillOrder'
 Vue.use(Router)
 
 export default new Router({
@@ -40,6 +41,11 @@ export default new Router({
         path: '/Apply',
         name: 'apply',
         component:Apply
+      },
+      {
+        path: '/FillOrder',
+        name: 'fillorder',
+        component:FillOrder
       }
     ]
   })

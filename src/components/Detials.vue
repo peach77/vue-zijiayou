@@ -1,5 +1,8 @@
 <template>
-  <div class="wrap">
+
+      
+  <div class="wrap"  id="body"  >
+
             <header>
                     <!-- <router-link :to="'./'"><div class="box"><i class="iconfont icon-ico_leftarrow"></i></div></router-link> -->
                     <div class="box" v-on:click='goBack'><i class="iconfont icon-ico_leftarrow"></i></div>
@@ -28,7 +31,7 @@
                  <div class="introduce">
                     <div class="top">
                         <p>
-                        <span v-scroll-to="'#a'"   v-on:click="change('tese')" :class="$store.state.blueColor==='tese'?'active':''" >行程特色</span>
+                        <span   v-on:click="change('tese')" :class="$store.state.blueColor==='tese'?'active':''" >行程特色</span>
                         <span  v-scroll-to="'#b'"  v-on:click="change('jianjie')" :class="$store.state.blueColor==='jianjie'?'active':''">行程简介</span>
                         <span  v-scroll-to="'#c'" v-on:click="change('xuzhi')" :class="$store.state.blueColor==='xuzhi'?'active':''" >预定须知</span></p>
                     </div>
@@ -268,15 +271,16 @@
     
  
   </div>
+
 </template>
 
 <script>
 
-import Vue from "vue";
+import Vue from 'vue'
 import VueScrollTo from "vue-scrollto";
 Vue.use(VueScrollTo, options);
 let options = { 
-container: "body", 
+container: "#body", 
   duration: 500,
     easing: "ease",
      offset: 0, 
@@ -289,48 +293,24 @@ container: "body",
               y: true};
 export default {
      name:'detials',
+    
     methods:{
           change(n){
            this.$store.commit('skipColor',n);
         },
         goBack(){
              this.$router.back()
-        },
-        // goTese(n){
-        // var anchor = this.$el.querySelector(".top")
-        // anchor.scrollTop = 0
-        // console.log(this.$el.querySelector(n).offsetTop);
-        //  this.$el.querySelector(".top").scrollIntoView(n)
-        // },
-        // goJianjie(n){
-        // var anchor = this.$el.querySelector(".top")
-        // anchor.scrollTop = 0
-        // console.log(this.$el.querySelector(n).offsetTop);
-        // this.$el.querySelector(".top").scrollIntoView(n)
-        // },
-        // goXuzhi(val){
-        //    var anchor= this.$el.querySelector(val);
-        //    console.log(anchor);
-        //    console.log(this.$el.querySelector(".top"));
-           
-        //    console.log( anchor.offsetTop);
-         
-           
-        
-        // },
+        }
        
     }
 }
 </script>
 
 <style scoped>
-.el-scrollbar__wrap {
-  overflow-x: hidden;
-}
-  div.wrap{
-        width:100%;
+      
+    div.wrap{
+        width: 100%;
         height: 100vh;
-      overflow: scroll;   
     }
     .icon-ico_leftarrow{
         color: white;
