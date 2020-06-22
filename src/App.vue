@@ -24,7 +24,7 @@ export default {
 <style>
    @import "./assets/css/icon/iconfont.css";
    @import './assets/css/icon/index.css';
-   
+  
    #app{
      display: flex;
      width: 100%; 

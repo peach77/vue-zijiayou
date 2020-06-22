@@ -14,8 +14,12 @@ const store = new Vuex.Store({
         adultNum:0,
         childNum:0,
         roomNum:0,
-        picked: '',
+        picked: 'One',
         awesome:'y',
+        male:'nan',
+        selected:'身份证',
+        checked:true,
+        checked0:'',
     
         // arr:[{date:'2020/6/18',className:"mark1"},{date:'2020/6/18',className:"mark1"}],
         nanjing:[

@@ -9,6 +9,9 @@ import Detials from './components/Detials'
 import Leader from './components/Leader'
 import Apply from './components/Apply'
 import FillOrder from './components/FillOrder'
+import Confirm from './components/Confirm';
+import Paypage from './components/Paypage'
+import Success from './components/Success'
 Vue.use(Router)
 
 export default new Router({
@@ -46,6 +49,21 @@ export default new Router({
         path: '/FillOrder',
         name: 'fillorder',
         component:FillOrder
+      },
+      {
+        path: '/Confirm',
+        name: 'Confirm',
+        component:Confirm
+      },
+      {
+        path: '/Paypage',
+        name: 'Paypage',
+        component:Paypage
+      },
+      {
+        path: '/Success',
+        name: 'Success',
+        component:Success
       }
     ]
   })

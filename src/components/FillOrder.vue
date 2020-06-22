@@ -23,18 +23,20 @@
                             <span class="agree">
                                     <span>是否同意拼房:</span> 
                                     <span class="choice">
-                                       <span> <input type="radio" id="one" value="One" checked='one' v-model="$store.state.picked">
-                                        <label for="one">同意</label></span><br>
+                                       <span> <input type="radio" id="one" value="One" checked='One' v-model="$store.state.picked">
+                                        <label for="one">同意</label>
+                                    </span><br>
+
+                              
+
+
                                       <span>
                                              <input type="radio" id="two" value="Two" v-model="$store.state.picked" class="no">
                                         <label for="two">不同意拼房，愿意支付差价</label>
                                       </span>
 
                                     </span> 
-                                </span>
-                              
-                                      
-                              
+                                </span>     
                             
                         </p>
                     </div>
@@ -59,17 +61,104 @@
                     <div class="connect">
                         <p class="top"><span><b>联系人姓名</b></span></p>
                         <div class="bot-connect">
-                            <p><span class="first"><span :style="{color:'#50bbdb'}">*</span>姓名<input type="text" placeholder="必填"></span></p>
-                            <p><span :style="{color:'#50bbdb'}">*</span>性别</p>
-                            <p><span :style="{color:'#50bbdb'}">*</span>手机号码<input type="text"></p>
-                            <p><span :style="{color:'#50bbdb'}">*</span>邮箱<input type="text" placeholder="必填，接受合同信息"></p>
+                            <p><span class="first"><span :style="{color:'#50bbdb'}">*</span>姓名：<input type="text" placeholder="必填"></span></p>
+                            <p class="male">
+                                <span class="first">
+                                <span :style="{color:'#50bbdb'}">*</span>
+                                <span>性别：</span>
+                                <input type="radio"  value="nan" id='nan' checked='nan' v-model="$store.state.male">
+                                <label for="nan">男</label>
+                                <input type="radio" id="nv" value="nv"  v-model="$store.state.male">
+                                <label for="nv">女</label>
+                                </span>
+                             </p>
+                            <p><span class="first"><span :style="{color:'#50bbdb'}">*</span>手机号码：<input type="text"></span></p>
+                            <p><span  class="first"><span :style="{color:'#50bbdb'}">*</span>邮箱：<input type="text" placeholder="必填，接受合同信息"></span></p>
                         </div>
                     </div>
+                    <div class="tourist">
+                          <p class="top"><span><b>游客信息</b></span><span class="add" :style="{color:'#50bbdb'}">添加游客</span></p>
+                         <div class="bot-connect">
+                             <p><span class="first"><span :style="{color:'#50bbdb'}">*</span>姓名：<input type="text" placeholder="必填"></span></p>
+                              <p>
+                              <span class="first">
+                                    <span :style="{color:'#50bbdb'}">*</span >
+                                     <span class="IdCart">
+                                         <span>证件类型： </span> 
+                                        <span>
+                                            <select v-model="$store.state.selected" :style="{fontSize:12+'px'}" >
+                                            <option >身份证</option>
+                                            <option>护照</option>
+                                            <option>户口本</option>
+                                            <option>驾驶证</option>
+                                             </select>
+                                         </span>
+                                 </span>
+                              </span>    
+                            </p>    
+                         </div>
+                    </div>
+                    <div class="insur">
+                         <p class="top"><span><b>保险</b></span></p>
+                          <div class="cla">
+                             <div class="left">
+                                <span>
+                                    <label for="checkbox">
+                                    <input type="checkbox" id="checkbox" v-model="$store.state.checked">
+                                    </label>
+                                </span>
+                                <p>
+                                    <span> 平安爱自驾境外长线保险 经典型</span><br>
+                                    <span> 2份 </span>
+                                </p>
+                            </div>
+                            <div class="right">
+                                <p>
+                                    <span>详情></span><br>
+                                    <span><span :style="{color:'#e57600'}">￥177</span>/一份</span>
+                                </p>
+                            </div>
+                           
+                          </div>
+                          <div class="box-line">
+                            <hr >
+                          </div>
+                           <div class="cla">
+                            <div class="left">
+                                <span>
+                                    <label for="checkbox">
+                                    <input type="checkbox" id="checkbox" v-model="$store.state.checked">
+                                    </label>
+                                </span>
+                                <p>
+                                    <span> 平安爱自驾境外长线保险 经典型</span><br>
+                                    <span> 2份 </span>
+                                </p>
+                            </div>
+                            <div class="right">
+                                <p>
+                                    <span>详情></span><br>
+                                    <span><span :style="{color:'#e57600'}">￥177</span>/一份</span>
+                                </p>
+                            </div>
+                           
+                          </div>
+                    </div>
+                    <div class="last">
+
+                     <label for="checkbox0">
+                                    <input type="checkbox" id="checkbox0" v-model="$store.state.checked0">
+                    </label><p>已阅读并同意爱自驾旅游协议</p>
+                    </div>
+                   
                 </div>
                 
                
             </body>
-          
+          <footer>
+            <p :style="{color:'#f09538'}"><b>总费用￥5920</b></p>
+            <p class="blue"><router-link to='/Confirm'>提交订单</router-link></p>
+          </footer>
   </div>
 </template>
 
@@ -201,8 +290,138 @@ export default {
            padding: 0 6px ;
      }
      div.bot-connect p {
-         border-bottom: 1px solid black;
+       
+         padding: 0 12px;
+         margin-top: 2px;
+       
         
      }
-   
+     div.bot-connect input{
+         border: none;
+         font-size: 12px;
+         outline: none;
+     }
+      div.bot-connect p span.first{
+         width: 90%;
+         border-bottom: 1px solid #ededed;
+          padding-bottom: 2px;
+          display: inline-block;
+        
+      }
+   div.bot-connect p.male .first {
+       display: flex;
+       align-items: center;
+   }
+     div.tourist{
+          background-color: white;
+          border-radius: 5px;
+          margin-bottom: 10px;
+       
+    }
+     div.tourist .top{
+        border-bottom: 1px solid #ededed;
+        padding: 6px;
+          display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+      
+       
+    }
+        div.tourist .bot-connect span.first{
+        display: flex;
+        flex-wrap: nowrap;
+       align-items: center;
+        }
+    div.tourist span.IdCart{
+        display: flex;
+        flex-wrap: nowrap;
+       align-items: center;
+
+    }
+     div.tourist .top .add{
+      
+        border-left: none;
+        margin-right: 10px;
+     }
+     div.tourist .top span{
+          border-left: 2px solid #50bbdb;
+           padding: 0 6px ;
+     }
+    div.insur{
+          background-color: white;
+          border-radius: 5px;
+          margin-bottom: 10px;
+       
+    }
+     div.insur .top{
+        border-bottom: 1px solid #ededed;
+        padding: 6px;
+       
+    }
+    .green {
+            width: 8px;
+            height: 16px;
+            border-color: #009933;
+            border-style: solid;
+            border-width: 0 3px 5px 0;
+            transform: rotate(45deg);
+     }
+    div.insur .cla{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10px;
+      
+    }
+    div.insur .cla p{
+        line-height: 20px;
+    }
+    div.insur .cla .left{
+        position: relative;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: center;
+      
+    }
+  
+ 
+      div.insur .cla .right{
+        display: flex;
+       text-align:right;
+        justify-content: flex-end;
+        align-items: center;
+       
+      }
+       div.insur .box-line{
+         
+            padding: 0 10px;
+       }
+       div.last{
+           text-align: center;
+           display: flex;
+           flex-wrap: nowrap;
+           align-items: center;
+           justify-content: center;
+       }
+       div.last input{
+           background-color: grey;
+       }
+        footer{
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+            padding: 10px 10px;
+            font-size: 14px;
+            align-items: center;
+        }
+        footer .blue{
+            background-color: #50bbdb;
+           
+            text-align: center;
+            padding:10px 26px;
+            border-radius: 5px;
+        }
+        footer .blue a{
+                color: white;
+        }
 </style>>
