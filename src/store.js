@@ -14,6 +14,8 @@ const store = new Vuex.Store({
         adultNum:0,
         childNum:0,
         roomNum:0,
+        picked: '',
+        awesome:'y',
     
         // arr:[{date:'2020/6/18',className:"mark1"},{date:'2020/6/18',className:"mark1"}],
         nanjing:[
@@ -177,6 +179,10 @@ const store = new Vuex.Store({
       },
       skipColor(state,n){
         state.blueColor=n
+      },
+      feeShow(state,n){
+ 
+          state.awesome=n
       }
       
     }
