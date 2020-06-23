@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="wrap"  id="divId">
          <header>
                     <div class="box" v-on:click='goBack'><i class="iconfont icon-ico_leftarrow"></i></div>
                    <p>确认订单</p>
@@ -92,31 +92,49 @@
                    
             </div>
 
-        </body>
          <footer>
          
-                <p :style="{color:'#f09538'}"><b>总费用￥5920</b></p>
+           <div  v-bind:class="{flex: $store.state. screenHeight>700}">
+           <div class=" father">
+            <p :style="{color:'#f09538'}"><b>总费用￥5920</b></p>
             <p class="blue"><router-link to='/Paypage'>确认，去支付</router-link></p>
+            
+           </div>
+          
+            </div>
        
         
           </footer>
+        </body>
+        
    
    </div>
 </template>
 
 <script>
+
 export default {
     name:'confirm',
+ 
     methods:{
            goBack(){
              this.$router.back()
-        } 
-    }
+        }    
+    },
+
+mounted () {
+    console.log(this.$store.state. screenHeight);
+    
+},
+
+
+  
 }
 </script>
 
 <style scoped>
      div.wrap{
+          background: #ededed;
         width:100%;
         height: 100vh;
       overflow: scroll;
@@ -229,7 +247,7 @@ export default {
            align-items: center;
            justify-content: center;
        }
-           footer{
+           footer .father{
               
             display: flex;
             justify-content: space-between;
@@ -249,6 +267,23 @@ export default {
         footer .blue a{
                 color: white;
                 text-decoration: none;
+        }
+        .flex{
+       
+        width: 100%;
+        box-sizing: border-box;
+        position: fixed;
+        bottom: 0px; 
+        }
+        .flex .son{
+            
+          
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+            padding: 10px 10px;
+            font-size: 14px;
+            align-items: center;
         }
       
 </style>

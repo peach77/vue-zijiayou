@@ -12,6 +12,7 @@ import FillOrder from './components/FillOrder'
 import Confirm from './components/Confirm';
 import Paypage from './components/Paypage'
 import Success from './components/Success'
+import Personal from './components/Personal'
 Vue.use(Router)
 
 export default new Router({
@@ -64,6 +65,11 @@ export default new Router({
         path: '/Success',
         name: 'Success',
         component:Success
+      },
+      {
+        path: '/Personal',
+        name: 'Personal',
+        component:Personal
       }
     ]
   })

@@ -17,7 +17,11 @@ export default {
   name: 'App',
   components: {
     MainPage1
-  }
+  },
+  
+
+
+
 }
 </script>
 

@@ -97,7 +97,7 @@ export default {
     }
      div.name{
          border-top: 1px solid #d1cccc;
-         padding:20px;
+         padding:10px;
          font-size: 16px;
      }
       div.name p{

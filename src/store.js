@@ -20,6 +20,9 @@ const store = new Vuex.Store({
         selected:'身份证',
         checked:true,
         checked0:'',
+       
+        screenHeight:document.documentElement.clientHeight, //屏幕高度
+    
     
         // arr:[{date:'2020/6/18',className:"mark1"},{date:'2020/6/18',className:"mark1"}],
         nanjing:[
@@ -127,6 +130,9 @@ const store = new Vuex.Store({
             ]
     },
     mutations: {
+        changeScreenHeight (state, val) {
+            state.screenHeight = val
+          },
         addNum(state,a){
             if(a==='adult'){
                 state.adultNum++

@@ -46,10 +46,7 @@ export default {
  components: {
     Calendar
   },
- created () {
-   console.log(this.$store);
-   
- },
+
   methods:{
     addNum(n){
        this.$store.commit('addNum',n);   
