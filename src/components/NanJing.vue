@@ -2,7 +2,7 @@
   <div class="wrap">
         
                    <header>
-                    <router-link :to="'./'"><div class="box"><i class="iconfont icon-ico_leftarrow"></i></div></router-link>
+                   <div class="box" v-on:click="goBack('home')"><i class="iconfont icon-ico_leftarrow"></i></div>
                     <div class="middle">
                         <p class="top"><span>南京</span>  <span>产品推荐</span></p>
                         <p>123个结果</p>
@@ -40,6 +40,16 @@
 export default {
      name:'nanjing',
      methods:{
+          goBack(n){
+           this.$store.commit('changeBottomColor',n)
+          
+           
+           
+             this.$router.back()
+           
+             
+         
+        },
         where(n){
              this.$store.commit('changeNanJingColor',n);         
         }

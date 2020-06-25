@@ -3,7 +3,7 @@
          <header>
                     <div class="box" v-on:click='goBack'><i class="iconfont icon-ico_leftarrow"></i></div>
                    <p>确认订单</p>
-                    
+                    <div></div>
         </header>
         <body>
             <div class="title">
@@ -161,7 +161,7 @@ mounted () {
         flex-wrap: nowrap;
         background-color: #50bbdb;
         justify-content: space-between;
-        padding: 0.21rem 1.6rem 0.21rem 0.2rem;
+      padding: 0.21rem 0.21rem 0.21rem 0.2rem;
         align-items: center;
     }
      div.title{

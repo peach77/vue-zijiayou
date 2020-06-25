@@ -11,6 +11,7 @@
 <script>
 export default {
     name:'FooterBottom',
+    
     methods:{
         where(n){
              this.$store.commit('changeBottomColor',n);         

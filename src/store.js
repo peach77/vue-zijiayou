@@ -20,6 +20,7 @@ const store = new Vuex.Store({
         selected:'身份证',
         checked:true,
         checked0:'',
+        type:'',
        
         screenHeight:document.documentElement.clientHeight, //屏幕高度
     
@@ -127,9 +128,63 @@ const store = new Vuex.Store({
         path:"线路：伊尔库茨克-利斯特维扬卡",
         date:"2016-03-02出发",
         price:"3680"}
-            ]
+            ],
+        personalList:[
+            {
+                id:'52sca',
+                ordernum:'订单号:7195351',
+                agree:'待出行',
+                scheduledTime:'预定时间：2015-12-29  12:04:00',
+                title:'[春节]<魅力湘西过大年>湘西年夜饭，北京直飞',
+                selfDriving:'自驾游   2016-02-07出发',
+                price:'￥4580',
+                btn:'取消'
+            },
+            {
+                id:'36sca',
+                ordernum:'订单号:7195351',
+                agree:'待支付',
+                scheduledTime:'预定时间：2015-12-28  12:04:00',
+                title:'[5月]<阿尔山童话世界冰雪温泉之旅>，北京直飞',
+                selfDriving:'自驾游    2016-05-07出发',
+                price:'￥4580',
+                btn:'付款'
+            },
+            {
+                id:'15sca',
+                ordernum:'订单号:7195351',
+                agree:'待评价',
+                scheduledTime:'预定时间：2015-12-27  12:04:00',
+                title:'[4月]<海南海岛环驾8日自驾之旅>，海口直飞',
+                selfDriving:'自驾游   2016-02-07出发',
+                price:'￥4580',
+                btn:'点评'
+            }, {
+                id:'80sca',
+                ordernum:'订单号:7195351',
+                agree:'已取消',
+                scheduledTime:'预定时间：2015-12-29  12:04:00',
+                title:'[5月]<食在广东粤菜美食6日自驾>，北京直飞',
+                selfDriving:'自驾游   2016-02-07出发',
+                price:'￥4580',
+                btn:'查看'
+            },
+            {
+                id:'93sca',
+                ordernum:'订单号:7195351',
+                agree:'已取消',
+                scheduledTime:'预定时间：2015-12-29  12:04:00',
+                title:'[5月]<食在广东粤菜美食6日自驾>，北京直飞',
+                selfDriving:'自驾游   2016-02-07出发',
+                price:'￥4580',
+                btn:'查看'
+            }
+        ]
     },
     mutations: {
+        changeType(state,n){
+            state.type=n
+        },
         changeScreenHeight (state, val) {
             state.screenHeight = val
           },

@@ -7,6 +7,7 @@
                     <!-- <router-link :to="'./'"><div class="box"><i class="iconfont icon-ico_leftarrow"></i></div></router-link> -->
                     <div class="box" v-on:click='goBack'><i class="iconfont icon-ico_leftarrow"></i></div>
                     <p>自驾团</p>
+                    <div></div>
             </header>
             <div class="pic">
                  <img src="../assets/titian.jpg" alt="">
@@ -322,7 +323,7 @@ export default {
         flex-wrap: nowrap;
         background-color: #50bbdb;
         justify-content: space-between;
-        padding: 0.21rem 1.6rem 0.21rem 0.2rem;
+        padding: 0.21rem 0.21rem 0.21rem 0.2rem;
         align-items: center;
     }
      header p{
