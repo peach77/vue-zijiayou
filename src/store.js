@@ -21,8 +21,8 @@ const store = new Vuex.Store({
         checked:true,
         checked0:'',
         type:'',
-       
-        screenHeight:document.documentElement.clientHeight, //屏幕高度
+    
+      
     
     
         // arr:[{date:'2020/6/18',className:"mark1"},{date:'2020/6/18',className:"mark1"}],

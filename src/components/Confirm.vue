@@ -120,12 +120,9 @@ export default {
            goBack(){
              this.$router.back()
         }    
-    },
+    }
 
-mounted () {
-    console.log(this.$store.state. screenHeight);
-    
-},
+
 
 
   
